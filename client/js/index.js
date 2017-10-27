@@ -1,33 +1,8 @@
-var campos = [
-	document.querySelector('#data'),
-	document.querySelector('#valor'),
-	document.querySelector('#quantidade')
-];
+let n1 = new Negociacao(new Date(), 10, 50.0);
 
-var tbody = document.querySelector('table tbody');
+n1._quantidade = 1000;
 
-document.querySelector('.form').addEventListener('submit', (event) => {
-	event.preventDefault();// Prevent the action of reloading the page
-
-	var tr = document.createElement('tr');
-
-	campos.forEach((campo) => {
-		var td = document.createElement('td');
-		td.textContent = campo.value;
-		tr.appendChild(td);
-	});
-
-	var tdVolume = document.createElement('td');
-	tdVolume.textContent = campos[1].value * campos[2].value;
-
-	tr.appendChild(tdVolume);
-
-	tbody.appendChild(tr);
-
-	campos[0].value = '';
-	campos[1].value = 1;
-	campos[2].value = 0;
-
-	campos[0].focus();
-
-});
+console.log(n1.quantidade);
+console.log(n1.data);
+console.log(n1.valor);
+console.log(n1.volume);
